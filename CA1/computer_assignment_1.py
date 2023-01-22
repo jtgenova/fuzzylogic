@@ -23,7 +23,9 @@ for i in range(NUMSEQ):
     print(f"Sequence {i+1} is {NCURRENT}")
     N1 = N2
     N2 = NCURRENT
+
 print(f"Process finished --- {time.time() - start_time} seconds ---")
+
 # -------------------------------------------------------------------------------
 # Run time: ~0.003 seconds
 # END RUN
