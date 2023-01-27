@@ -7,7 +7,7 @@ Description: Using python 3.8, calculate the first nine integers of the Fibonacc
 Deadline: January 28, 2023 11:59PM
 """
 import time
-import ece6397_Genova_helperHeaderFooter as header_footer
+import ece6397_Genova_HeaderFooter as header_footer
 
 
 def fibonacci_sequence(num_seq):
