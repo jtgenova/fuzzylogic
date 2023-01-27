@@ -16,11 +16,11 @@ def fibonacci_sequence(num_seq):
     """
 
     fib_num = [0, 1]
-    print(f"Sequence 1 is {fib_num[0]}\n")
-    print(f"Sequence 2 is {fib_num[1]}\n")
+    print(f"Sequence 1 is {fib_num[0]}")
+    print(f"Sequence 2 is {fib_num[1]}")
     for i in range(2, num_seq):
         fib_num.append(fib_num[i-1]+fib_num[i-2])
-        print(f"Sequence {i+1} is {fib_num[i]}\n")
+        print(f"Sequence {i+1} is {fib_num[i]}")
 ##################################################################################################
 if __name__=="__main__":
     CA_NUM = 1
