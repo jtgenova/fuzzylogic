@@ -2,12 +2,9 @@
 ECE 6397: Fuzzy Logic
 Professor: Dr. Steven Provence
 Author: Joshua Genova
-Computer Assignment #1
-Description: Using python 3.8, calculate the first nine integers of the Fibonacci sequence.
-Deadline: January 28, 2023 11:59PM
+Description: Header and Footer for all assignments
 """
 import time
-
 def header(assignment_number, description):
     """
     Header for assignment per instructions.
@@ -30,24 +27,19 @@ def footer(time_elapsed):
     """
 
     print('-'*79)
-    print(f'Run time: {time_elapsed:.5f}s')
+    if time_elapsed >= 1:
+        print(f'Run time: {time_elapsed:.5} s')
+    if time_elapsed < 1 and time_elapsed >= 0.001:
+            print(f'Run time: {time_elapsed*1000:.5} ms')
+    if time_elapsed < 0.001:
+        print(f'Run time: {time_elapsed*1000000:.5} \u03BCs')
     print('END RUN')
 
-def fibonacci_sequence(num_seq):
-    """
-    Printing Fibonnaci Sequence.
-    """
-
-    fib_num = [0, 1]
-    for i in range(2, num_seq):
-        fib_num.append(fib_num[i-1]+fib_num[i-2])
-    for _ in range(num_seq):
-        print(f"Sequence {_+1} is {fib_num[_]}")
-
-
 if __name__=="__main__":
-    header(1,"Using python 3.8, calculate the first nine integers of the Fibonacci sequence.")
+    header(1, "Using python 3.8, calculate the first nine integers of the Fibonacci sequence.")
     start_time = time.time()
-    fibonacci_sequence(9)
+    for i in range(1000):
+        pass
     final_time = time.time() - start_time
+    print(final_time)
     footer(final_time)
