@@ -9,37 +9,35 @@ Deadline: February 4, 2023 11:59PM
 import time
 import ece6397_genova_headerfooter as header_footer
 
-def distributive_laws(S, A, B, C):
+def distributive_laws(s_uni, a_set, b_set, c_set):
     """
     Printing and verifying the distributive laws.
     """
-    A_not = S-A
-    B_not = S-B
-    C_not = S-C
-    E = set([])
-    print(f'The Universe Set S is {S}')
-    print(f'The Subset A is {A}')
-    print(f'The Subset B S is {B}')
-    print(f'The Subset C S is {C}\n')
+    a_not = s_uni-a_set
+    empty_set = set([])
+    print(f'The Universe Set S is {s_uni}')
+    print(f'The Subset A is {a_set}')
+    print(f'The Subset B S is {b_set}')
+    print(f'The Subset C S is {c_set}\n')
     ##################################################################################
-    print(f'A cap (B cup C): {A & (B | C)}')
-    print(f'(A cap B) cup (A cap C): {(A & B) | (A & C)}')
-    print(f'A cup (B cap C): {A | (B & C)}')
-    print(f'(A cup B) cap (A cup C): {(A | B) & (A| C)}')
-    print(f'A cup A: {A | A}')
-    print(f'A cap A: {A & A}')
-    print(f'A cup (A cap B): {A | (A & B)}')
-    print(f'A cap (A cup B): {A & (A | B)}')
-    print(f'A cup (A complement cap B): {A | (A_not & B)}')
-    print(f'A cup B: {A | B}')
-    print(f'A cap (A complement cup B): {A & (A_not | B)}')
-    print(f'A cap B: {A & B}')
-    print(f'A cup S: {A | S}')
-    print(f'A cap Empty: {A & E}')
-    print(f'A cup Empty: {A | E}')
-    print(f'A cap S: {A & S}')
-    print(f'A cap A complement: {A & A_not}')
-    print(f'A cup A complement: {A | A_not}')
+    print(f'A cap (B cup C): {a_set & (b_set | c_set)}')
+    print(f'(A cap B) cup (A cap C): {(a_set & b_set) | (a_set & c_set)}')
+    print(f'A cup (B cap C): {a_set | (b_set & c_set)}')
+    print(f'(A cup B) cap (A cup C): {(a_set | b_set) & (a_set| c_set)}')
+    print(f'A cup A: {a_set | a_set}')
+    print(f'A cap A: {a_set & a_set}')
+    print(f'A cup (A cap B): {a_set | (a_set & b_set)}')
+    print(f'A cap (A cup B): {a_set & (a_set | b_set)}')
+    print(f'A cup (A complement cap B): {a_set | (a_not & b_set)}')
+    print(f'A cup B: {a_set | b_set}')
+    print(f'A cap (A complement cup B): {a_set & (a_not | b_set)}')
+    print(f'A cap B: {a_set & b_set}')
+    print(f'A cup S: {a_set | s_uni}')
+    print(f'A cap Empty: {a_set & empty_set}')
+    print(f'A cup Empty: {a_set | empty_set}')
+    print(f'A cap S: {a_set & s_uni}')
+    print(f'A cap A complement: {a_set & a_not}')
+    print(f'A cup A complement: {a_set | a_not}')
 
 
 
