@@ -20,27 +20,51 @@ def distributive_laws(s_uni, a_set, b_set, c_set):
     print(f'The Subset B S is {b_set}')
     print(f'The Subset C S is {c_set}\n')
     ##################################################################################
+    print('Distributive Law 1')
     print(f'A cap (B cup C): {a_set & (b_set | c_set)}')
-    print(f'(A cap B) cup (A cap C): {(a_set & b_set) | (a_set & c_set)}')
+    print(f'(A cap B) cup (A cap C): {(a_set & b_set) | (a_set & c_set)}\n')
+
+    print('Distributive Law 2')
     print(f'A cup (B cap C): {a_set | (b_set & c_set)}')
-    print(f'(A cup B) cap (A cup C): {(a_set | b_set) & (a_set| c_set)}')
-    print(f'A cup A: {a_set | a_set}')
-    print(f'A cap A: {a_set & a_set}')
-    print(f'A cup (A cap B): {a_set | (a_set & b_set)}')
-    print(f'A cap (A cup B): {a_set & (a_set | b_set)}')
+    print(f'(A cup B) cap (A cup C): {(a_set | b_set) & (a_set| c_set)}\n')
+
+    print('Distributive Law 3')
+    print(f'A cup A: {a_set | a_set}\n')
+
+    print('Distributive Law 4')
+    print(f'A cap A: {a_set & a_set}\n')
+
+    print('Distributive Law 5')
+    print(f'A cup (A cap B): {a_set | (a_set & b_set)}\n')
+
+    print('Distributive Law 6')
+    print(f'A cap (A cup B): {a_set & (a_set | b_set)}\n')
+
+    print('Distributive Law 7')
     print(f'A cup (A complement cap B): {a_set | (a_not & b_set)}')
-    print(f'A cup B: {a_set | b_set}')
+    print(f'A cup B: {a_set | b_set}\n')
+
+    print('Distributive Law 8')
     print(f'A cap (A complement cup B): {a_set & (a_not | b_set)}')
-    print(f'A cap B: {a_set & b_set}')
-    print(f'A cup S: {a_set | s_uni}')
-    print(f'A cap Empty: {a_set & empty_set}')
-    print(f'A cup Empty: {a_set | empty_set}')
-    print(f'A cap S: {a_set & s_uni}')
-    print(f'A cap A complement: {a_set & a_not}')
+    print(f'A cap B: {a_set & b_set}\n')
+
+    print('Distributive Law 9')
+    print(f'A cup S: {a_set | s_uni}\n')
+
+    print('Distributive Law 10')
+    print(f'A cap Empty: {a_set & empty_set}\n')
+
+    print('Distributive Law 11')
+    print(f'A cup Empty: {a_set | empty_set}\n')
+
+    print('Distributive Law 12')
+    print(f'A cap S: {a_set & s_uni}\n')
+
+    print('Distributive Law 13')
+    print(f'A cap A complement: {a_set & a_not}\n')
+
+    print('Distributive Law 14')
     print(f'A cup A complement: {a_set | a_not}')
-
-
-
 ##################################################################################################
 if __name__=="__main__":
     CA_NUM = 2
