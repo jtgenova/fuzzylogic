@@ -7,7 +7,7 @@ Description: Calculate and verify all of the Distributive Laws from the textbook
 Deadline: February 4, 2023 11:59PM
 """
 import time
-import ece6397_genova_headerfooter as header_footer
+import ece6397_genova_helper_headerfooter as header_footer
 
 def distributive_laws(s_uni, a_set, b_set, c_set):
     """
@@ -17,8 +17,8 @@ def distributive_laws(s_uni, a_set, b_set, c_set):
     empty_set = set([])
     print(f'The Universe Set S is {s_uni}')
     print(f'The Subset A is {a_set}')
-    print(f'The Subset B S is {b_set}')
-    print(f'The Subset C S is {c_set}\n')
+    print(f'The Subset B is {b_set}')
+    print(f'The Subset C is {c_set}\n')
     ##################################################################################
     print('Distributive Law 1')
     print(f'A cap (B cup C): {a_set & (b_set | c_set)}')
