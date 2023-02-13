@@ -3,11 +3,11 @@ ECE 6397: Fuzzy Logic
 Professor: Dr. Steven Provence
 Author: Joshua Genova
 Computer Assignment #4
-Description: Use the intererval module to perform all of the  interval arithmatic 
+Description: Use the intererval module to perform all of the  interval arithmatic
              operations (+, -, * ,/ , min ,max) on A = [2, 14] and B = [1, 16].
              Namely, A+B, A-B, A*B, A/B, min(A,B), max(A,B).
-             The output should be clear and easily read by someone unfamilar 
-            to set theory and interval arithmatic. 
+             The output should be clear and easily read by someone unfamilar
+            to set theory and interval arithmatic.
 Deadline: February 18, 2023 11:59PM
 """
 import time
@@ -71,7 +71,6 @@ if __name__=="__main__":
     print(f'A / B = {divide(A_interval,B_interval)}')
     print(f'max(A,B) = {max_interval(A,B)}')
     print(f'min(A,B) = {min_interval(A,B)}')
-
     final_time = time.time() - start_time
     header_footer.footer(final_time)
     
