@@ -22,11 +22,11 @@ Description:
 Deadline: March 5, 2023 11:59PM
 """
 import time
+import math
 from skfuzzy.fuzzymath import fuzzy_add, fuzzy_sub, fuzzy_mult
 from skfuzzy.membership import trimf
 import numpy as np
 from matplotlib import pyplot as plt
-import math
 import ece6397_genova_helper_headerfooter as header_footer
 
 def add_fuzzy(a_set, mf_a, b_set, mf_b):
