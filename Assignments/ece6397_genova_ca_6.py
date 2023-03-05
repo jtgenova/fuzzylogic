@@ -23,8 +23,10 @@ Deadline: March 5, 2023 11:59PM
 """
 import time
 from skfuzzy.fuzzymath import fuzzy_add, fuzzy_sub, fuzzy_mult
+from skfuzzy.membership import trimf
 import numpy as np
 from matplotlib import pyplot as plt
+import math
 import ece6397_genova_helper_headerfooter as header_footer
 
 def add_fuzzy(a_set, mf_a, b_set, mf_b):
@@ -89,7 +91,21 @@ def multiply_fuzzy(a_set, mf_a, b_set, mf_b):
     """
     use fuzzy_mult to multiply sets and print the results.
     """
+    # method 1
     c_mult, mf_cmult = fuzzy_mult(a_set, mf_a, b_set, mf_b)
+
+    # method 2
+    c_set = np.r_[c_mult[0] : c_mult[len(c_mult)-1]+1]
+    c_uf = trimf(c_set, [12, 24, 55])
+
+    # method 3
+    c_hand = np.zeros(len(c_set))
+    for i in range(12-2, 24-1):
+        c_hand[i] = (-10 + math.sqrt(10**2 - 4*2*(12-c_set[i])))/(2*2)
+        # print(f'{c_set[i]}: {c_hand[i]}')
+    for i in range(25-2, 55-1):
+        c_hand[i] = (36 - math.sqrt((-36)**2 - 4*5*(55-c_set[i])))/(2*5)
+        # print(f'{c_set[i]}: {c_hand[i]}')
 
     plt.figure(figsize=(15,5))
     plt.subplot(1,3,1)
@@ -108,11 +124,16 @@ def multiply_fuzzy(a_set, mf_a, b_set, mf_b):
 
     plt.subplot(1,3,3)
     plt.xlim([0, 65])
-    plt.plot(c_mult, mf_cmult)
+    plt.plot(c_mult, mf_cmult, label='fuzzy_mult')
     plt.xlabel("c", fontdict={'family':'serif','color':'darkred','size':10})
     plt.ylabel(r'$u_{C}(c)$', fontdict={'family':'serif','color':'darkred','size':10})
     plt.title("A*B=C", fontdict ={'family':'serif','color':'blue','size':12})
-    return c_mult, mf_cmult
+
+    plt.plot(c_set, c_uf, label='approximation')
+
+    plt.plot(c_set, c_hand, label='work by hand')
+
+    return c_set, c_hand
 ##################################################################################################
 if __name__=="__main__":
     CA_NUM = 6
@@ -143,5 +164,6 @@ if __name__=="__main__":
     plt.show(block=False)
     final_time = time.time() - start_time
     header_footer.footer(final_time)
+    plt.legend()
     plt.show()
     
