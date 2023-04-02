@@ -55,7 +55,7 @@ def create_set(size):
     """
     Create an array for size of set.
     """
-    set_n = np.arange(0, 1+1/size, 1/size).tolist()
+    set_n = np.arange(0, round(1+1/size, 2), round(1/size, 3)).tolist()
     return set_n
 
 def form_a(a_var, b_var):
@@ -104,22 +104,24 @@ def implication(a_var, b_var, formula):
     form = check_form(formula)
     a_set = create_set(a_var)
     b_set = create_set(b_var)
+    print(f'First Set : {a_set}')
+    print(f'Second Set : {b_set}')
     a_set_size = len(a_set)
     b_set_size = len(b_set)
     for i in range(a_set_size):
         for j in range(b_set_size):
             if form[0] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_a(a_set[i], b_set[j]):.5},        a')
+                print(f'{a_set[i]} => {b_set[j]} = {form_a(a_set[i], b_set[j])},        a')
             if form[1] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_b(a_set[i], b_set[j]):.5},        b')
+                print(f'{a_set[i]} => {b_set[j]} = {form_b(a_set[i], b_set[j])},        b')
             if form[2] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_c(a_set[i], b_set[j]):.5},        c')
+                print(f'{a_set[i]} => {b_set[j]} = {form_c(a_set[i], b_set[j])},        c')
             if form[3] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_d(a_set[i], b_set[j]):.5},        d')
+                print(f'{a_set[i]} => {b_set[j]} = {form_d(a_set[i], b_set[j])},        d')
             if form[4] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_e(a_set[i], b_set[j]):.5},        e')
+                print(f'{a_set[i]} => {b_set[j]} = {form_e(a_set[i], b_set[j])},        e')
             if form[5] == 1:
-                print(f'{a_set[i]:.5} => {b_set[j]:.5} = {form_f(a_set[i], b_set[j]):.5},        f')
+                print(f'{a_set[i]} => {b_set[j]} = {form_f(a_set[i], b_set[j])},        f')
             print('\n')
 ##################################################################################################
 if __name__=="__main__":
