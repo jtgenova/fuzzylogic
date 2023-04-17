@@ -484,7 +484,7 @@ class AirConditioner:
         u_prev = self.get_control()/1000
         error_prev = 0
         output_table = Table(names=('Samples', 'Desired Temp', 'Actual Temp', 'Control Effort'))
-        for k in range(100):
+        for k in range(1000):
             samples.append(k+1)
             y_k = self.process(y_prev, u_prev)
             actual_temp.append(y_k)
@@ -521,7 +521,7 @@ class AirConditioner:
 ##################################################################################################
 if __name__=="__main__":
     CA_NUM = 8
-    DESCRIPTION = "Write a script that performs the operations presented in class."
+    DESCRIPTION = "Thermostat Controller for an Air Conditioner."
     header_footer.header(CA_NUM, DESCRIPTION)
     start_time = time.time()
     OUTSIDE_TEMP = int(sys.argv[1])
